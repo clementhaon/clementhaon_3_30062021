@@ -1,0 +1,138 @@
+.description-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+    background-color: $color-background;
+    & h1 {
+        margin: 20px 20px 0 20px;
+        font-size: 27px;
+    }
+    & h2 {
+        font-weight: 300;
+        padding: 0 20px;
+        font-size: 18px;
+        }
+    & .btn-explorer {
+        @include border-shadow();
+        border-radius: 30px;
+        padding: 15px 22px;
+        margin-bottom: 40px;
+        color: white;
+        border: none;
+        background: linear-gradient( $color-secondary, $color-primary);
+        cursor: pointer;
+        transform: scale(1);
+        transition: transform, 400ms;
+        &:hover {
+            transform: scale(1.15);
+        }
+    }
+}
+.fonction-container {
+    @include padding-section();
+    font-weight: bold;
+    & ol{
+        padding-inline-start: 0;
+        list-style: none; 
+        counter-reset: bullets;
+
+        & p {
+            font-size: 1.5em;
+        }
+    }
+    & li {
+        font-size: 1em;
+        padding: 15px;
+        border-radius: 20px;
+        margin-bottom: 15px;
+        counter-increment: bullets;
+        @include border-shadow();
+        &::before {
+            content :counter(bullets);
+            background: $color-primary;
+            color: white;
+            font-size: 11px;
+            padding: 3px 7px;
+            border-radius: 50%;
+            margin-left: -2em;
+            margin-right: 2em;
+        }
+    &:hover  {
+        background-color: #F3ECF5;
+    }   
+    }  
+    & .fas {
+        margin-right: 2em;
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}
+.restaurant-container {
+    background-color: $color-background;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include padding-section();
+    &__title h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+    &__box {
+        @include border-shadow();
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        max-height: 220px;
+        width: 100%;
+        border-radius: 20px;
+        position: relative;
+
+
+        &--image {
+            height: 160px;
+            border-radius: 20px 20px 0 0;
+            &--new {
+                position: absolute;
+                padding: 7px 10px;
+                background-color: $color-tertiary;
+                font-weight: bold;
+                top: 10px;
+                right: 19px;
+            }
+
+        & img {
+            object-fit: cover;
+            max-height: 100%;
+            width: 100%;
+            border-radius: 20px 20px 0 0;
+            object-position: 0 -53px;
+        }
+        & .img-2 {
+            object-position: 0 -148px;
+        }
+        }
+        &--description {
+            display: flex;
+            background-color: white;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+            border-radius: 0 0 20px 20px;
+            padding: 0 20px 0 15px;
+            & p {
+                margin: 0;
+                line-height: 1.5;
+                font-size: 17px;
+            }
+            & .far {
+                font-size: 17px;
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+}

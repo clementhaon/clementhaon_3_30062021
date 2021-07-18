@@ -1,0 +1,83 @@
+.container-menu {
+    @include padding-section();
+    background-color: $color-background;
+    &__title h1 {
+        font-family: 'Shrikhand', cursive;
+        font-size: 1.5em;
+        margin: 0;
+    }
+    &__presentation {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 25px;
+        &--title {
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 0.5rem;
+            font-weight: normal;
+            font-size: 15px;
+        
+            &::after {
+              content: "";
+              width: 2.4rem;
+              height: 0.25rem;
+              background-color: $color-tertiary;
+              position: absolute;
+              left: 0;
+              bottom: 0;
+            }
+          }
+        &--proposition {
+            display: flex;
+            overflow: hidden;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+            border-radius: 10px;
+            line-height: 1.5;
+            background-color: white;
+            @include border-shadow;
+            
+            & p {
+                margin: 0;
+                font-size: 12px;
+                padding: 10px 0 10px 10px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                & strong {
+                    font-size: 14px;
+                }
+            }
+            & .price {
+                font-weight: bold;
+                font-size: 12px;
+                padding: 10px 0;
+            }
+            & .validation {
+                //align-self: center;
+                background-color: $color-tertiary;
+                margin: -1rem -5rem -1rem 1rem;
+                width: 4rem;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                transition-duration: 0.5s;            
+                //width: 50px;
+                //height: 100%;
+                //transform: translateX(50px);
+                //transition: transform 1000ms ease-out;
+
+                & .far {
+                    //background-color: $color-tertiary;
+                    
+                    
+                    &:hover {
+                        //right: 50px;
+                    }
+                } 
+            }
+        }
+    }
+}
