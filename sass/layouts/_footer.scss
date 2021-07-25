@@ -1,23 +1,23 @@
 footer {
-    background-color: #424141;
+    background-color: #353535;
     color: white;
     padding: 28px;
     & img {
     filter: invert(1);
     width: 25%;
     }
-    & .footer-container ul {
+    & ul {
         list-style-type: none;
         padding-inline-start: unset;
-        & li {
-            padding-bottom: 10px;
-            & .fas {
-                font-size: 12px;
-                padding-right: 10px;
-            }
-            & span .fas{
+    }
+    & li {
+        padding-bottom: 10px;
+    }
+    & .fas {
+        font-size: 12px;
+        padding-right: 10px;
+    }
+    & span .fas {
                 padding-right: 5px;
-            }
-        }
     }
 }

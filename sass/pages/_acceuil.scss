@@ -5,23 +5,26 @@
     text-align: center;
     padding: 8px;
     background-color: $color-background;
-    & h1 {
+    & h2 {
         margin: 20px 20px 0 20px;
         font-size: 27px;
+        font-weight: 800;
     }
-    & h2 {
+    & h3 {
         font-weight: 300;
         padding: 0 20px;
         font-size: 18px;
         }
-    & .btn-explorer {
+}
+.btn-explorer {
         @include border-shadow();
         border-radius: 30px;
         padding: 15px 22px;
         margin-bottom: 40px;
         color: white;
+        font-size: 1rem;
         border: none;
-        background: linear-gradient( $color-secondary, $color-primary);
+        @include clr-btn();
         cursor: pointer;
         transform: scale(1);
         transition: transform, 400ms;
@@ -29,7 +32,7 @@
             transform: scale(1.15);
         }
     }
-}
+
 .fonction-container {
     @include padding-section();
     font-weight: bold;
@@ -43,7 +46,7 @@
         }
     }
     & li {
-        font-size: 1em;
+        font-size: 1rem;
         padding: 15px;
         border-radius: 20px;
         margin-bottom: 15px;
@@ -61,15 +64,16 @@
         }
     &:hover  {
         background-color: #F3ECF5;
+        & .fas {
+            color: $color-primary;
+        }
     }   
     }  
     & .fas {
         margin-right: 2em;
-        &:hover {
-            color: $color-primary;
-        }
     }
 }
+
 .restaurant-container {
     background-color: $color-background;
     display: flex;
@@ -127,12 +131,33 @@
                 line-height: 1.5;
                 font-size: 17px;
             }
-            & .far {
-                font-size: 17px;
-                &:hover {
-                    color: $color-primary;
+            & .heart-restaurant {
+                & .far {
+                    font-size: 17px;
+                    position: relative;
+                    right: -20px;
+                    opacity: 1;
+
                 }
-            }
+                & .fas {
+                    position: relative;
+                    font-size: 17px;
+                    @include clr-btn();
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;   
+                    opacity: 0;
+                }
+                &:hover .fas{
+                    transition: all .1s;
+                    opacity: 1;
+                }
+                &:hover .far {
+                    transition: all .1s;
+                    opacity: 0;
+                }
+                
+            }          
         }
     }
 }

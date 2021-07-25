@@ -12,19 +12,17 @@
 <body>
     <header>
         <div class="title">
-            <a href="#">
-                <img src="./images/logo/ohmyfood.png" alt="logo-omyfood">
-            </a>
-            <div class="title__position">
-                    <i class="fas fa-map-marker-alt"></i>
-                <p>Paris, Belleville</p>
-            </div>
+            <h1>ohmyfood</h1>
+        </div>
+        <div class="title__position">
+                <i class="fas fa-map-marker-alt"></i>
+            <p>Paris, Belleville</p>
         </div>
     </header>
     <main>
         <div class="description-container">
-            <h1>Réservez le menu qui vous convient</h1>
-            <h2>Découvrez des restaurants d'exception, sélectionés par nos soins</h2>
+            <h2>Réservez le menu qui vous convient</h2>
+            <h3>Découvrez des restaurants d'exception, sélectionés par nos soins</h3>
             <button class="btn-explorer">
                 Explorer nos restaurants
             </button>
@@ -36,12 +34,11 @@
                 <li><i class="fas fa-store grey"></i>Dégustez au restaurant</li>
             </ol>
         </nav>
-        <div class="restaurant-container">
+        <section class="restaurant-container">
             <div class="restaurant-container__title">
             <h2>Restaurant</h2>
             </div>
             <div class="restaurant-container__box">
-                <a href="a-la-francaise.html">
                 <div class="restaurant-container__box--image">
                     <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="la palette du goût" class="img-1">
                     <div class="restaurant-container__box--image--new">Nouveau</div>
@@ -49,7 +46,10 @@
                 <div class="restaurant-container__box--description">
                     <p><strong>La palette du goût</strong>
                     <br>Ménilmontant</p>
-                    <i class="far fa-heart"></i>
+                    <div class="heart-restaurant">
+                        <i class="far fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
                 </div>
                 </a>
             </div>
@@ -61,18 +61,26 @@
                 <div class="restaurant-container__box--description">
                     <p><strong>La note enchantée</strong>
                     <br>Charonne</p>
-                    <i class="far fa-heart"></i>
+                    <div class="heart-restaurant">
+                        <i class="far fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
                 </div>
             </div>
             <div class="restaurant-container__box">
-                <div class="restaurant-container__box--image">
-                    <img src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="a la francaise" class="img-3">
-                </div>
-                <div class="restaurant-container__box--description">
-                    <p><strong>À la française</strong>
-                    <br>Cité Rouge</p>
-                    <i class="far fa-heart"></i>
-                </div>
+                <a href="a-la-francaise.html">
+                    <div class="restaurant-container__box--image">
+                        <img src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="a la francaise" class="img-3">
+                    </div>
+                    <div class="restaurant-container__box--description">
+                        <p><strong>À la française</strong>
+                        <br>Cité Rouge</p>
+                    <div class="heart-restaurant">
+                        <i class="far fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    </div>
+                </a>
             </div>
             <div class="restaurant-container__box">
                 <div class="restaurant-container__box--image">
@@ -81,10 +89,13 @@
                 <div class="restaurant-container__box--description">
                     <p><strong>Le délice des sens</strong>
                     <br>Folie-Méricourt</p>
-                    <i class="far fa-heart"></i>
+                    <div class="heart-restaurant">
+                        <i class="far fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
     <footer>
         <img src="./images/logo/ohmyfood.png" alt="logo">

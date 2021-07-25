@@ -1,27 +1,29 @@
 .title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-    & img {
-        max-width: 50%;
-        margin-left: 25%;
-        padding: 15px 0;
-        
+    & h1 {
+        font-family: 'Shrikhand', cursive;
+        text-align: center;   
+        letter-spacing: 1px;     
+    }
+    & .fas {
+        position: absolute;
+        top: 28px;
+        left: 20px;
+        font-size: 1rem;
     }
     &__position {
         background-color: #e3e3e3;
         display: flex;
         flex-direction: row;
         justify-content: center;
-        width: 100%;
         box-shadow: inset 0 2px 5px #A6A5A5;
         font-size: 1.1em;
-        padding: 8px 0;
+        margin-left: -24px;
+        font-weight: 500;
         
         & .fas {
             align-self: center;
-            margin-right: 10px;
+            margin-right: 17px;
         }
     }
 }
