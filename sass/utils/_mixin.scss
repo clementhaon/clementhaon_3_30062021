@@ -1,12 +1,13 @@
-@mixin border-shadow {
-    box-shadow: 1px 5px 10px #eaeaea;
+@mixin border-shadow ($right: 0, $bottom: 5px, $blur: 10px, $spread: 0, $color: $box-shadow) {
+    box-shadow: $right $bottom $blur $spread $color;
 }
-@mixin padding-section {
-    padding: 40px 28px;
+@mixin padding-section ($y:40px, $x:28px) {
+    padding: $y $x;
 }
 @mixin radius-border {
     border-radius: 20px;
 }
-@mixin clr-btn {
-    background: linear-gradient( $color-secondary, $color-primary);
+@mixin clr-btn ($color-top: $color-secondary, $color-bottom: $color-primary) {
+    background: linear-gradient( $color-top, $color-bottom);
 }
+
