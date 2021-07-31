@@ -429,7 +429,7 @@ img {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 13px;
+  font-size: 15px;
 }
 .card-menu__price {
   font-weight: bold;
