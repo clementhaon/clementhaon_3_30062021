@@ -11,6 +11,20 @@
 .main-menu {
     background-color: $color-background;
 }
+.menu-img {
+  height: 273px;
+  @media screen and (min-width: 750px) {
+    height: 350px;
+  }
+  & img {
+    height: 273px;
+    width: 100%;
+    object-fit: cover;
+    @media screen and (min-width: 750px) {
+      height: 350px;
+    }  
+  }
+}
 .container-menu {
     background-color: $color-background;
     padding: 15px 15px 0 15px;
@@ -18,18 +32,27 @@
     border-top-right-radius: 30px;
     position: relative;
     top: -50px;
+    @media screen and (min-width: 750px) {
+      top: 0;
+      padding: 15px 80px;
+    }
+  
     &__title {
         font-family: 'Shrikhand', cursive;
         display: flex;
         align-items: center;
         justify-content: space-between;
         & h1 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 500;
+            @media screen and (min-width: 750px) {
+              font-size: 2.2rem;
+            }         
         }
     }
     &__heart {
       z-index: 1;
+      padding-right: 20px;
       &:hover {
           &::after {
               opacity: 1;
@@ -42,7 +65,7 @@
           font-size: 2em;
           position: relative;
           opacity: 0.7;
-          transition: opacity .1s ease-in-out;
+          transition: opacity .4s ease-in-out;
       }
       &::after {
           font-family: "Font Awesome 5 Free";
@@ -51,14 +74,19 @@
           background-clip: text;
           -webkit-background-clip: text;
           color: transparent;
-          font-size: 2em;  
+          font-size: 1.9em;  
           position: absolute;
-          right: 15px;
-          top: 38px;
+          right: 36px;
+          top: 35px;
           font-weight: bold;
           opacity: 0;
           z-index: -1;
-          transition: opacity .3s ease-in-out;
+          transition: opacity .4s ease-in-out;
+          @media screen and (min-width: 750px) {
+            right: 101px;
+            top: 44px;
+          }
+    
       }
   } 
 }
@@ -72,6 +100,10 @@
       padding-bottom: 0.5rem;
       font-weight: normal;
       font-size: 15px;
+      @media screen and (min-width: 750px) {
+        font-size: 1.3em;
+      }
+
   
       &::after {
         content: "";
@@ -89,11 +121,11 @@
       flex-flow: row nowrap;
       justify-content: space-between;
       cursor: pointer;
-      align-items: center;
+      align-items: flex-end;
       flex: 1 0 30%;
       margin-bottom: 15px;
       border-radius: 15px;
-      @include border-shadow;
+      @include border-shadow ($color: $box-shadow-light);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -102,37 +134,37 @@
         /*margin-left: 20px;*/
         background-color: $color-tertiary;
         border-radius: 0px 10px 10px 0px;             
-        width: 70px;
         height: 100%;
+        width: 0;
+        flex: 0;
         transform-origin: right 50%;
         transform: translateX(70px);
-        transition: all .4s;
+        transition: all .6s;
         & .fa-check-circle {
           color: white;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
+          font-weight: bold;
           font-size: 1.2rem;
-          padding: 20px 0;
-          transition: transform .4s, opacity .1s;
-          opacity: 0;
+          padding: 25px 0;
+          transition: transform .6s cubic-bezier(0.91, 0.32, 0.58, 1);
+          @media screen and (min-width: 750px) {
+            padding: 28px 0;
+          }
+    
         }
       }
       &:hover .card-menu__validation,
       &:active .card-menu__validation{
+        flex: 0.28;
         transform: translateX(0);
-        /*margin-left: 10px;*/
         
       }
       &:hover .fa-check-circle,
       &:active .fa-check-circle{
         transform: rotate(360deg);
-        opacity: 1;
       }
-      &:hover .card-menu__price,
-      &:active .card-menu__price{
-        transform: translateX(-10px);
-        margin-left: 20px;
+      &:hover .card-menu__title,
+      &:active .card-menu__title{
+        white-space: nowrap;
       }
   &__plat {
       @extend %flex-column;
@@ -140,14 +172,20 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      padding: 10px 0;
 
   }
   &__title {
       margin: 0;
-      padding: 0 0 3px 10px;
-      white-space: nowrap;
+      font-size: 19px;
+      padding: 0 0 5px 10px;
+      white-space: pre-line;
       overflow: hidden;
       text-overflow: ellipsis;
+      @media screen and (min-width: 750px) {
+        font-size: 20px;
+      }
+
 
   }
   &__bottom {
@@ -166,15 +204,25 @@
           overflow: hidden;
           text-overflow: ellipsis;
           font-size: 15px;
+          @media screen and (min-width: 750px) {
+            font-size: 19px;
+          }
+    
       }
   }
   &__price {
       font-weight: bold;
-      transform: translateX(50px);
+      /*transform: translateX(15px);*/
       transition: all .4s;
-      position: relative;
-      top: 10px;
+      margin: 10px 15px;
+      @media screen and (min-width: 750px) {
+        transform: scale(1.2);
+      }
+
   }
+}
+.position-price {
+  margin: -4px 15px;
 }
 .cmd {
     @extend %flex-center;
@@ -183,6 +231,10 @@
         position: relative;
         top: 35px;
         margin-bottom: 70px;
+        @media screen and (min-width: 750px) {
+          font-size: 1.5em;
+        }
+  
     }
 }
 
