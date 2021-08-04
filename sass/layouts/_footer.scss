@@ -1,9 +1,9 @@
 footer {
     background-color: #353535;
     color: white;
-    padding: 28px;
+    padding: 28px 15px;
     @media screen and (min-width: 750px) {
-        padding: 28px 80px;
+        @include padding-tablette ($y: 28px); 
       }
 
     & img {

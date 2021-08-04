@@ -1,10 +1,10 @@
 @keyframes appear {
     from {
-      transform: translateY(0);
+      transform: translateY(20px);
       opacity: 0;
     }
     to {
-      transform: translateY(1);
+      transform: translateY(0);
       opacity: 1;
     }
   }
@@ -65,13 +65,12 @@
           font-size: 2em;
           position: relative;
           opacity: 0.7;
-          transition: opacity .4s ease-in-out;
+          transition: opacity .3s ease-in-out;
       }
       &::after {
           font-family: "Font Awesome 5 Free";
           content: "\f004";
           @include clr-btn($color-top: $color-primary, $color-bottom: $color-secondary);
-          background-clip: text;
           -webkit-background-clip: text;
           color: transparent;
           font-size: 1.9em;  
@@ -81,7 +80,7 @@
           font-weight: bold;
           opacity: 0;
           z-index: -1;
-          transition: opacity .4s ease-in-out;
+          transition: opacity .3s ease-in-out;
           @media screen and (min-width: 750px) {
             right: 101px;
             top: 44px;
@@ -95,6 +94,7 @@
   @extend %flex-column;
   padding-top: 25px;
   &__title {
+    margin: 0;
       text-transform: uppercase;
       position: relative;
       padding-bottom: 0.5rem;

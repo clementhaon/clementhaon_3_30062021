@@ -50,8 +50,8 @@
     padding: 8px;
     background-color: $color-background;
     & h2 {
-        margin: 20px 20px 0 20px;
-        font-size: 27px;
+        margin: 20px 41px 0 41px;
+        font-size: 23px;
         font-weight: 800;
     }
     & h3 {
@@ -82,14 +82,18 @@
 .fonction-container {
     @include padding-section();
     font-weight: bold;
+    @media screen and (min-width: 750px) {
+        @include padding-tablette;
+    }
+    & p {
+        font-size: 1.5em;
+    }
     & ol{
         padding-inline-start: 0;
         list-style: none; 
         counter-reset: bullets;
+        padding-left: 6px;
 
-        & p {
-            font-size: 1.5em;
-        }
     }
     & li {
         font-size: 1rem;
@@ -124,43 +128,83 @@
     background-color: $color-background;
     @extend %flex-column;
     @include padding-section();
+    @media screen and (min-width: 750px) {
+        @include padding-tablette ($x:40px);
+        display: grid;
+        gap: 25px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr 1fr;
+        grid-template-areas:
+            "title title"
+            "cardH1 cardH2"
+            "cardH3 cardH4";
+        :nth-child(2){grid-area: cardH1;}
+        :nth-child(3){grid-area: cardH2;}
+        :nth-child(4){grid-area: cardH3;}
+        :nth-child(5){grid-area: cardH4;}
+
+    }
     &__title h2 {
         font-size: 1.5em;
         margin-bottom: 20px;
+        @media screen and (min-width: 750px) {
+            grid-area: title;
+        }
     }
     &__box {
         @include border-shadow ($color: $box-shadow-light);
         @extend %flex-column;
         margin-bottom: 20px;
-        max-height: 220px;
+        max-height: 260px;
         width: 100%;
         border-radius: 20px;
         position: relative;
+        @media screen and (min-width: 550px) {
+            max-height: 300px;
+        }
+        @media screen and (min-width: 650px) {
+            max-height: 350px;
+        }
+        @media screen and (min-width: 750px) {
+            max-height: 350px;
+        }
     }
 
     &__image {
-        height: 160px;
+        height: 180px;
         border-radius: 20px 20px 0 0;
+        @media screen and (min-width: 550px) {
+            height: 220px;
+        }
+        @media screen and (min-width: 650px) {
+            height: 270px;
+        }
+        @media screen and (min-width: 750px) {
+            height: 194px;
+        }
+
+
         & img {
             object-fit: cover;
             max-height: 100%;
             width: 100%;
             border-radius: 20px 20px 0 0;
-            object-position: 0 -53px;
+            object-position: 50% bottom;
+            
         }
         & .img-2 {
-            object-position: 0 -148px;
+            object-position: 0 -154px;
         }
     }   
     &--new {
         position: absolute;
-        padding: 7px 10px;
+        padding: 7px 13px;
         background-color: $color-tertiary;
-        color: darken($color-tertiary, 50%);
+        color: darken($color-tertiary, 40%);
         font-weight: bold;
-        top: 10px;
-        right: 19px;
-        border-radius: 2px;
+        top: 16px;
+        right: 13px;
+        border-radius: 4px;
     }
 
     &__description {
@@ -168,13 +212,13 @@
         background-color: white;
         align-items: center;
         justify-content: space-between;
-        height: 60px;
+        height: 80px;
         border-radius: 0 0 20px 20px;
-        padding: 0 20px 0 15px;
+        padding: 10px 20px 10px 15px;
         & p {
             margin: 0;
             line-height: 1.5;
-            font-size: 17px;
+            font-size: 19px;
         }
         & .heart-restaurant {
             z-index: 1;
@@ -187,22 +231,23 @@
                 }
             }
             & .far {
-                font-size: 17px;
+                font-size: 26px;
                 position: relative;
+                top: -11px;
                 opacity: 0.7;
-                transition: opacity .1s ease-in-out;
+                transition: opacity .3s ease-in-out;
             }
             &::after {
                 font-family: "Font Awesome 5 Free";
                 content: "\f004";
                 @include clr-btn($color-top: $color-primary, $color-bottom: $color-secondary);
-                background-clip: text;
+                /*background-clip: text;*/
                 -webkit-background-clip: text;
                 color: transparent;
-                font-size: 18px;  
+                font-size: 26px;  
                 position: absolute;
                 right: 20px;
-                bottom: 20px;
+                bottom: 35px;
                 font-weight: bold;
                 opacity: 0;
                 z-index: -1;

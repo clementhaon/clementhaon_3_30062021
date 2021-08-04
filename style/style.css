@@ -5,7 +5,7 @@
   flex-direction: column;
 }
 
-.cmd, .card-menu__validation, .loader--circle, .loader {
+.cmd, .card-menu__validation, .loader--circle, .loader, .title {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,18 +38,13 @@ img {
   color: grey;
 }
 
-.title h1 {
-  font-family: "Shrikhand", cursive;
-  text-align: center;
-  letter-spacing: 1px;
-  margin: 0;
-  padding: 1rem 0;
+.title img {
+  padding: 25px 0 10px 0;
 }
 .title .fas {
-  position: absolute;
-  top: 28px;
-  left: 20px;
-  font-size: 1rem;
+  padding-top: 15px;
+  margin-left: -67px;
+  font-size: 1.2rem;
 }
 .title__position {
   background-color: #e3e3e3;
@@ -116,8 +111,8 @@ img {
   background-color: #f6f6f6;
 }
 .description-container h2 {
-  margin: 20px 20px 0 20px;
-  font-size: 27px;
+  margin: 20px 41px 0 41px;
+  font-size: 23px;
   font-weight: 800;
 }
 .description-container h3 {
@@ -146,16 +141,22 @@ img {
 }
 
 .fonction-container {
-  padding: 40px 28px;
+  padding: 40px 15px;
   font-weight: bold;
+}
+@media screen and (min-width: 750px) {
+  .fonction-container {
+    padding: 40px 80px;
+  }
+}
+.fonction-container p {
+  font-size: 1.5em;
 }
 .fonction-container ol {
   padding-inline-start: 0;
   list-style: none;
   counter-reset: bullets;
-}
-.fonction-container ol p {
-  font-size: 1.5em;
+  padding-left: 6px;
 }
 .fonction-container li {
   font-size: 1rem;
@@ -187,57 +188,114 @@ img {
 
 .restaurant-container {
   background-color: #f6f6f6;
-  padding: 40px 28px;
+  padding: 40px 15px;
+}
+@media screen and (min-width: 750px) {
+  .restaurant-container {
+    padding: 40px 40px;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-areas: "title title" "cardH1 cardH2" "cardH3 cardH4";
+  }
+  .restaurant-container :nth-child(2) {
+    grid-area: cardH1;
+  }
+  .restaurant-container :nth-child(3) {
+    grid-area: cardH2;
+  }
+  .restaurant-container :nth-child(4) {
+    grid-area: cardH3;
+  }
+  .restaurant-container :nth-child(5) {
+    grid-area: cardH4;
+  }
 }
 .restaurant-container__title h2 {
   font-size: 1.5em;
   margin-bottom: 20px;
 }
+@media screen and (min-width: 750px) {
+  .restaurant-container__title h2 {
+    grid-area: title;
+  }
+}
 .restaurant-container__box {
   box-shadow: 0 5px 10px 0 #eaeaea;
   margin-bottom: 20px;
-  max-height: 220px;
+  max-height: 260px;
   width: 100%;
   border-radius: 20px;
   position: relative;
 }
+@media screen and (min-width: 550px) {
+  .restaurant-container__box {
+    max-height: 300px;
+  }
+}
+@media screen and (min-width: 650px) {
+  .restaurant-container__box {
+    max-height: 350px;
+  }
+}
+@media screen and (min-width: 750px) {
+  .restaurant-container__box {
+    max-height: 350px;
+  }
+}
 .restaurant-container__image {
-  height: 160px;
+  height: 180px;
   border-radius: 20px 20px 0 0;
+}
+@media screen and (min-width: 550px) {
+  .restaurant-container__image {
+    height: 220px;
+  }
+}
+@media screen and (min-width: 650px) {
+  .restaurant-container__image {
+    height: 270px;
+  }
+}
+@media screen and (min-width: 750px) {
+  .restaurant-container__image {
+    height: 194px;
+  }
 }
 .restaurant-container__image img {
   object-fit: cover;
   max-height: 100%;
   width: 100%;
   border-radius: 20px 20px 0 0;
-  object-position: 0 -53px;
+  object-position: 50% bottom;
 }
 .restaurant-container__image .img-2 {
-  object-position: 0 -148px;
+  object-position: 0 -154px;
 }
 .restaurant-container--new {
   position: absolute;
-  padding: 7px 10px;
+  padding: 7px 13px;
   background-color: #99E2D0;
-  color: #1b6150;
+  color: #278870;
   font-weight: bold;
-  top: 10px;
-  right: 19px;
-  border-radius: 2px;
+  top: 16px;
+  right: 13px;
+  border-radius: 4px;
 }
 .restaurant-container__description {
   display: flex;
   background-color: white;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 80px;
   border-radius: 0 0 20px 20px;
-  padding: 0 20px 0 15px;
+  padding: 10px 20px 10px 15px;
 }
 .restaurant-container__description p {
   margin: 0;
   line-height: 1.5;
-  font-size: 17px;
+  font-size: 19px;
 }
 .restaurant-container__description .heart-restaurant {
   z-index: 1;
@@ -249,22 +307,23 @@ img {
   opacity: 0;
 }
 .restaurant-container__description .heart-restaurant .far {
-  font-size: 17px;
+  font-size: 26px;
   position: relative;
+  top: -11px;
   opacity: 0.7;
-  transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 .restaurant-container__description .heart-restaurant::after {
   font-family: "Font Awesome 5 Free";
   content: "";
   background: linear-gradient(#9356DC, #FF79DA);
-  background-clip: text;
+  /*background-clip: text;*/
   -webkit-background-clip: text;
   color: transparent;
-  font-size: 18px;
+  font-size: 26px;
   position: absolute;
   right: 20px;
-  bottom: 20px;
+  bottom: 35px;
   font-weight: bold;
   opacity: 0;
   z-index: -1;
@@ -273,11 +332,11 @@ img {
 
 @keyframes appear {
   from {
-    transform: translateY(0);
+    transform: translateY(20px);
     opacity: 0;
   }
   to {
-    transform: translateY(1);
+    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -347,13 +406,12 @@ img {
   font-size: 2em;
   position: relative;
   opacity: 0.7;
-  transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 .container-menu__heart::after {
   font-family: "Font Awesome 5 Free";
   content: "";
   background: linear-gradient(#9356DC, #FF79DA);
-  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   font-size: 1.9em;
@@ -363,7 +421,7 @@ img {
   font-weight: bold;
   opacity: 0;
   z-index: -1;
-  transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 @media screen and (min-width: 750px) {
   .container-menu__heart::after {
@@ -376,6 +434,7 @@ img {
   padding-top: 25px;
 }
 .box-containers__title {
+  margin: 0;
   text-transform: uppercase;
   position: relative;
   padding-bottom: 0.5rem;
@@ -565,7 +624,7 @@ img {
 footer {
   background-color: #353535;
   color: white;
-  padding: 28px;
+  padding: 28px 15px;
 }
 @media screen and (min-width: 750px) {
   footer {

@@ -1,7 +1,10 @@
 @mixin border-shadow ($right: 0, $bottom: 5px, $blur: 10px, $spread: 0, $color: $box-shadow) {
     box-shadow: $right $bottom $blur $spread $color;
 }
-@mixin padding-section ($y:40px, $x:28px) {
+@mixin padding-section ($y:40px, $x:15px) {
+    padding: $y $x;
+}
+@mixin padding-tablette ($y:40px, $x: 80px) {
     padding: $y $x;
 }
 @mixin radius-border {
