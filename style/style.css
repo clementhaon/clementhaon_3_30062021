@@ -104,6 +104,12 @@ img {
     transform: rotate(360deg);
   }
 }
+@media screen and (max-width: 329px) {
+  body {
+    min-width: 329px;
+  }
+}
+
 @media screen and (min-width: 1140px) {
   .main-home {
     max-width: 1140px;

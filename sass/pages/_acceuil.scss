@@ -43,6 +43,11 @@
         transform: rotate(360deg);
     }
 }
+body {
+    @media screen and (max-width:329px) {
+        min-width: 329px;
+    }
+}
 .main-home {
     @media screen and (min-width: 1140px) {
         max-width: 1140px;
