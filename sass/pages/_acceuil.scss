@@ -43,6 +43,12 @@
         transform: rotate(360deg);
     }
 }
+.main-home {
+    @media screen and (min-width: 1140px) {
+        max-width: 1140px;
+        margin: auto;
+    }
+}
 .description-container {
     @extend %flex-column;
     align-items: center;
@@ -82,8 +88,11 @@
 .fonction-container {
     @include padding-section();
     font-weight: bold;
+    @media screen and (min-width: 550px) {
+        @include padding-section($x:30px);
+    }
     @media screen and (min-width: 750px) {
-        @include padding-tablette;
+        @include padding-section($x:80px);
     }
     & p {
         font-size: 1.5em;
@@ -93,7 +102,10 @@
         list-style: none; 
         counter-reset: bullets;
         padding-left: 6px;
-
+        @media screen and (min-width: 1000px) {
+            display: flex;
+            justify-content: space-between;
+        }
     }
     & li {
         font-size: 1rem;
@@ -119,17 +131,28 @@
         }
     }   
     }  
-    & .fas {
+    & .line1 {
         margin-right: 2em;
+    }
+    & .line2 {
+        margin-right: 26px;
+    }
+    & .line3 {
+        margin-right: 24px;
     }
 }
 
 .restaurant-container {
     background-color: $color-background;
     @extend %flex-column;
+    flex-direction: column;
     @include padding-section();
+    @media screen and (min-width: 550px) {
+        @include padding-section($x:60px);
+    }
+
     @media screen and (min-width: 750px) {
-        @include padding-tablette ($x:40px);
+        @include padding-section ($x:40px);
         display: grid;
         gap: 25px;
         grid-template-columns: 1fr 1fr;
@@ -146,6 +169,7 @@
     }
     &__title h2 {
         font-size: 1.5em;
+        margin-top: 0;
         margin-bottom: 20px;
         @media screen and (min-width: 750px) {
             grid-area: title;
@@ -162,9 +186,9 @@
         @media screen and (min-width: 550px) {
             max-height: 300px;
         }
-        @media screen and (min-width: 650px) {
+        /*@media screen and (min-width: 650px) {
             max-height: 350px;
-        }
+        }*/
         @media screen and (min-width: 750px) {
             max-height: 350px;
         }
@@ -176,14 +200,15 @@
         @media screen and (min-width: 550px) {
             height: 220px;
         }
-        @media screen and (min-width: 650px) {
+        /*@media screen and (min-width: 650px) {
             height: 270px;
-        }
+        }*/
         @media screen and (min-width: 750px) {
             height: 194px;
         }
-
-
+        @media screen and (min-width: 1000px) {
+            height: 250px;
+        }
         & img {
             object-fit: cover;
             max-height: 100%;

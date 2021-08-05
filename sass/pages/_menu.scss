@@ -34,7 +34,8 @@
     top: -50px;
     @media screen and (min-width: 750px) {
       top: 0;
-      padding: 15px 80px;
+      max-width: 750px;
+      margin: auto;
     }
   
     &__title {
@@ -82,10 +83,8 @@
           z-index: -1;
           transition: opacity .3s ease-in-out;
           @media screen and (min-width: 750px) {
-            right: 101px;
             top: 44px;
-          }
-    
+          }    
       }
   } 
 }
