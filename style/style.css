@@ -25,6 +25,11 @@ a:-webkit-any-link {
   text-decoration: inherit;
 }
 
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 * {
   box-sizing: border-box;
 }
